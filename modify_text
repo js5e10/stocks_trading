@@ -1,0 +1,19 @@
+import fileinput
+import re
+
+pattern =r'June\s\d+,\s\d+\s\d+'
+
+for line in fileinput.input('russel.txt', inplace=1,backup='.bk'):
+
+    print re.sub(pattern, ' ', line)
+
+for line in fileinput.input('russel.txt', inplace=1):
+     print re.sub(r'^[^\w]*', '', line)
+
+for line in fileinput.input('russel.txt', inplace=1):
+     line=line.rstrip()
+     if line!='':
+         print line
+f=open("russel.txt", "rw+")
+line=f.readlines()
+line=line[:-1]
